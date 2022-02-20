@@ -1,0 +1,30 @@
+.todoForm {
+    width: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin: 35px 0 10px;
+}
+
+
+@media (max-width: 881px) {
+    .todoForm {
+        width: 90%;
+    }
+}
+
+@media (max-width: 521px) {
+    .todoForm {
+        width: 90%;
+        flex-direction: column;
+        margin: 0;
+    }
+
+    .todoForm button {
+        width: 98% !important;
+    }
+
+    .todoForm .Input {
+        width: 98% !important;
+    }
+}

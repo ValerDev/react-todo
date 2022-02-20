@@ -1,0 +1,8 @@
+export const ADD_TODO = 'ADD_TODO'
+export const REMOVE_TASK = 'REMOVE_TASK'
+export const TOGGLE_TASK_STATUS = 'TOGGLE_TASK_STATUS'
+export const TOGGLE_OPEN_STATUS = 'TOGGLE_OPEN_STATUS'
+export const SAVE_OR_EDIT_TASK = 'SAVE_OR_EDIT_TASK'
+export const CHANGE_TASK = 'CHANGE_TASK'
+export const SET_TODOS = 'SET_TODOS'
+export const IS_LOADING = 'IS_LOADING'

@@ -1,0 +1,148 @@
+.Input {
+    position: relative;
+    margin: 35px 0;
+}
+
+.Input > input{
+    width: 100%;
+}
+
+.Input input:placeholder-shown + label {
+    font-size: 16px;
+    left: 10px;
+    top: 20px;
+}
+
+.Input input[type='text']:focus, .Input input[type='password']:focus {
+    box-shadow: rgb(0 117 255) 0px 0px 3px 0px;
+}
+
+.Input input[type='text']:focus + label, .Input input[type='password']:focus + label {
+    font-size: 9px;
+    top: -10px;
+    left: 5px;
+}
+
+.Input input:not(placeholder-shown) + label {
+    font-size: 9px;
+    top: -10px;
+    left: 5px;
+}
+
+.Input input[type='text'], .Input input[type='password'] {
+    width: 100%;
+    background-color: #363635;
+    color: #ffffff;
+    border: none;
+    padding: 10px;
+    font-size: 16px;
+    border-radius: 8px;
+    transition: .2s;
+}
+
+.Input label {
+    position: absolute;
+    transition: .2s;
+    line-height: 0;
+    color: #a5a5a5;
+}
+
+.Input button:hover {
+    box-shadow: rgb(0 117 255) 0px 0px 3px 0px;
+}
+
+
+.Textarea {
+    position: relative;
+    margin: 35px 0;
+}
+
+.Textarea > textarea{
+    width: 100%;
+}
+
+.Textarea textarea:placeholder-shown + label {
+    font-size: 16px;
+    left: 10px;
+    top: 20px;
+}
+
+.Textarea textarea:focus, .Textarea textarea:focus {
+    box-shadow: rgb(0 117 255) 0px 0px 3px 0px;
+}
+
+.Textarea textarea:focus + label, .Textarea textarea:focus + label {
+    font-size: 9px;
+    top: -10px;
+    left: 5px;
+}
+
+.Textarea textarea:not(placeholder-shown) + label {
+    font-size: 9px;
+    top: -10px;
+    left: 5px;
+}
+
+.Textarea textarea, .Textarea textarea {
+    width: 100%;
+    background-color: #363635;
+    color: #ffffff;
+    border: none;
+    padding: 10px;
+    font-size: 16px;
+    border-radius: 8px;
+    transition: .2s;
+}
+
+.Textarea label {
+    position: absolute;
+    transition: .2s;
+    line-height: 0;
+    color: #a5a5a5;
+}
+
+.Textarea button:hover {
+    box-shadow: rgb(0 117 255) 0px 0px 3px 0px;
+}
+
+.Checkbox{
+    display: flex;
+    align-items: center;
+}
+.Checkbox label{
+    font-size: 12px;
+    margin-left: 5px;
+}
+
+
+.Button {
+    background-color: #363635;
+    color: #ffffff;
+    border: none;
+    padding: 10px;
+    font-size: 16px;
+    border-radius: 8px;
+    transition: .2s;
+    margin: 20px 0;
+}
+
+.Button:hover {
+    opacity: .8;
+    box-shadow: rgb(0 117 255) 0px 0px 3px 0px;
+}
+
+.Button:active {
+    transform: scale(.95);
+}
+
+.error {
+    position: absolute;
+    bottom: -15px;
+    left: 5px;
+    color: crimson;
+    font-size: 10px;
+}
+
+.errorBorder {
+    box-shadow: crimson 0px 0px 1px 1px !important;
+}

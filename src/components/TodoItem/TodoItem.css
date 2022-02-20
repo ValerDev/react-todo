@@ -1,0 +1,151 @@
+.TodoItem {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    padding: 1em;
+    background-color: #363635;
+    border-radius: 8px;
+    margin: 20px 0;
+    position: relative;
+    overflow-y: hidden;
+    transition: .2s;
+    min-height: 60px;
+}
+
+.TodoItem.TodoItemOpened {
+    min-height: 200px;
+}
+
+.TodoItem > .task {
+    width: 95%;
+    color: #ffffff;
+    font-size: 16px;
+    padding-right: 10px;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden;
+    height: 20px;
+    transition: .2s;
+}
+
+.task.openedTask {
+    overflow-y: auto;
+    text-overflow: unset;
+    white-space: unset;
+    word-break: break-word;
+    height: 165px;
+}
+
+.TodoItem > .areaForEditing{
+    background-color: #00000044;
+    resize: none;
+    width: 100%;
+    height: 165px;
+    color: #ffffff;
+    font-size: 16px;
+    padding: 5px;
+    border-radius: 3px;
+    opacity: .9;
+    transition: .2s;
+}
+
+.TodoItem > .areaForEditing.areaForEditingClosed{
+    height: 0px;
+    z-index: -1;
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+.TodoItem > .tools {
+    display: flex;
+    gap: 3px;
+    width: max-content;
+    padding-left: 4px;
+}
+
+.TodoItem > .tools > .editItem, .deleteItem, .saveItem, .toggleItem {
+    color: #ffffff;
+    width: 20px;
+    height: 20px;
+    transition: .2s;
+    background-color: #282726;
+    padding: 0 5px;
+    border-radius: 2px;
+    line-height: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.TodoItem > .tools > .editItem:active, .deleteItem:active, .saveItem:active, .toggleItem:active {
+    transform: scale(.8);
+}
+
+.TodoItem > .tools > .deleteItem:hover {
+    color: #dc143c;
+    opacity: .8;
+}
+
+.TodoItem > .tools > .editItem:hover{
+    color: #fdab31;
+    opacity: .8;
+}
+
+.TodoItem > .tools > .saveItem:hover{
+    color: #639339;
+    opacity: .8;
+}
+.TodoItem > .tools > .toggleItem:hover {
+    color: #0075ff;
+    opacity: .8;
+}
+
+.TodoItem > .tools > .openBtn {
+    background-color: transparent;
+    color: #a5a5a5;
+    display: flex;
+    align-items: center;
+    position: absolute;
+    bottom: 3px;
+    right: 17px;
+    font-size: 9px;
+    line-height: 1;
+}
+
+.TodoItem > .tools span {
+    transition: .2s;
+    font-weight: 600;
+    margin-left: 3px;
+}
+
+.TodoItem > .tools > .openBtn > .closeIcon {
+    margin-bottom: 1px;
+}
+
+.TodoItem > .tools > .openBtn > .openIcon {
+    margin-bottom: -5px;
+    transform: rotateX(180deg);
+}
+
+
+.date {
+    position: absolute;
+    color: #a5a5a5;
+    bottom: 4px;
+    left: 15px;
+    font-size: 8px;
+}
+
+@media (max-width: 881px) {
+    .TodoItem {
+        min-height: 105px;
+        padding: 20px 10px;
+    }
+    .TodoItem > .tools {
+        margin-right: -4px;
+        margin-left: 3px;
+        flex-flow: column wrap;
+    }
+}
