@@ -1,6 +1,6 @@
 .Input {
     position: relative;
-    margin: 35px 0;
+    margin: 20px 0 10px;
 }
 
 .Input > input{
@@ -54,7 +54,7 @@
 
 .Textarea {
     position: relative;
-    margin: 35px 0;
+    margin: 20px 0 10px;
 }
 
 .Textarea > textarea{
@@ -106,8 +106,10 @@
 }
 
 .Checkbox{
+    width: max-content;
     display: flex;
     align-items: center;
+    margin: 10px 0;
 }
 .Checkbox label{
     font-size: 12px;
@@ -123,7 +125,7 @@
     font-size: 16px;
     border-radius: 8px;
     transition: .2s;
-    margin: 20px 0;
+    margin: 10px 0;
 }
 
 .Button:hover {
@@ -136,11 +138,9 @@
 }
 
 .error {
-    position: absolute;
-    bottom: -15px;
-    left: 5px;
     color: crimson;
     font-size: 10px;
+    margin: 5px 0 ;
 }
 
 .errorBorder {

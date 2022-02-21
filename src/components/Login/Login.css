@@ -8,8 +8,10 @@
 
 .loginForm > h2{
     margin-bottom: 25px;
-    line-height: 10px;
     color: #0075ff;
 }
 
-
+.loginForm .authError{
+    color: crimson;
+    font-size: 10px;
+}

@@ -1,20 +1,24 @@
 import React from "react";
 import './Login.css'
-import {Field, reduxForm} from "redux-form";
+import {Field, reduxForm, stopSubmit} from "redux-form";
 import {Button, Checkbox, Input} from "../common/formDetails/formDetails";
-import {required, rangeLength} from "../../utils/validators/validators";
+import {required, rangeLength, email} from "../../utils/validators/validators";
+import {useDispatch} from "react-redux";
 
 const rangeLengthLogin = rangeLength(6, 36)
 const rangeLengthPassword = rangeLength(6, 16)
 const LoginForm = (props) => {
-    const {handleSubmit} = props;
+    const {handleSubmit, error} = props;
 
     return (
         <form onSubmit={handleSubmit}>
-                <Field name='login' id='login' type='text' placeholder='Login' component={Input} validate={[required, rangeLengthLogin]}/>
-                <Field name='password' id='password' type="password" placeholder='Password' component={Input} validate={[required, rangeLengthPassword]}/>
-                <Field name='rememberMe' title='Remember me' component={Checkbox}/>
-                <Button value='Login' style={{width: '100%'}}/>
+            <Field name='email' id='email' type='text' placeholder='Email' component={Input}
+                   validate={[required, rangeLengthLogin, email]}/>
+            <Field name='password' id='password' type="password" placeholder='Password' component={Input}
+                   validate={[required, rangeLengthPassword]}/>
+            {error && <p className='authError'>{error}</p>}
+            <Field name='rememberMe' title='Remember me' component={Checkbox}/>
+            <Button value='Login' style={{width: '100%'}}/>
         </form>
     )
 }
@@ -22,8 +26,11 @@ const LoginForm = (props) => {
 const LoginReduxForm = reduxForm({form: 'login'})(LoginForm)
 
 const Login = () => {
+    const dispatch = useDispatch()
 
     const onSubmit = (loginData) => {
+
+        dispatch(stopSubmit("login", {_error: 'Incorrect login or password'}))
         console.log(loginData)
     }
 
