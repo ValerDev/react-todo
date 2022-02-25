@@ -28,7 +28,9 @@ export const addNewTodo = (todo) => dispatch => {
 }
 
 export const removeTask = (id, todos) => dispatch => {
-    dispatch(removeTaskAC(todos.filter(todo => todo.id !== id)))
+    const newTodos = todos.filter(todo => todo.id !== id);
+    dispatch(removeTaskAC(newTodos))
+    return newTodos
 }
 
 export const changeTask = (newTask, id, todos) => dispatch => {

@@ -29,7 +29,7 @@ const Login = () => {
     const dispatch = useDispatch()
 
     const onSubmit = (loginData) => {
-
+        // TODO request for login
         dispatch(stopSubmit("login", {_error: 'Incorrect login or password'}))
         console.log(loginData)
     }
